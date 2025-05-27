@@ -1,6 +1,7 @@
 // src/SplitScreen.jsx
 import "./App.css";
 import nariri_school from "./assets/nariri_school.jpg";
+import { Link } from "react-router-dom";
 
 export default function SplitScreen() {
   return (
@@ -9,9 +10,9 @@ export default function SplitScreen() {
       <nav className="navbar">
         <div className="logo">Nawiri</div>
         <div className="nav-links">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </nav>
 
@@ -29,15 +30,15 @@ export default function SplitScreen() {
           </div>
           <p>
             Are you a new user...
-            <a href="/signup" className="link">
+            <Link to="/signup" className="link">
               {" "}
               Sign in{" "}
-            </a>{" "}
+            </Link>{" "}
             |
-            <a href="/forgot-password" className="link">
+            <Link to="/forgot-password" className="link">
               {" "}
               Forget Password{" "}
-            </a>
+            </Link>
           </p>
         </div>
 
