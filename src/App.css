@@ -11,6 +11,17 @@ body, html, #root {
   flex-direction: column;
   height: 100vh;
 }
+/* Links*/
+.link {
+  color: #8d0464;
+  text-decoration: none;
+  margin: 0 0.25rem;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
 
 /* NAVBAR */
 .navbar {
