@@ -2,7 +2,6 @@
 import "./App.css";
 import nariri_school from "./assets/nariri_school.jpg";
 
-
 export default function SplitScreen() {
   return (
     <div className="page-wrapper">
@@ -21,19 +20,29 @@ export default function SplitScreen() {
         <div className="left-pane">
           <h1>Welcome To Nawiri</h1>
           <p>
-            Nawiri is a platform that connects students with mentors to help them
-            achieve their academic and career goals.
+            Nawiri is a platform that connects students with mentors to help
+            them achieve their academic and career goals.
           </p>
           <div className="button-group">
             <button className="primary-button">Student</button>
             <button className="secondary-button">Teacher</button>
-      
           </div>
-          <p>Are you a new user... Sign in | Forget Password</p>
+          <p>
+            Are you a new user...
+            <a href="/signup" className="link">
+              {" "}
+              Sign in{" "}
+            </a>{" "}
+            |
+            <a href="/forgot-password" className="link">
+              {" "}
+              Forget Password{" "}
+            </a>
+          </p>
         </div>
 
         <>
-        <div></div>
+          <div></div>
         </>
         <div className="right-pane">
           <img src={nariri_school} alt="Nariri School" className="full-image" />
