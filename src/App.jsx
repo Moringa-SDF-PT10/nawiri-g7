@@ -1,10 +1,16 @@
-import './App.css';
-import SplitScreen from './SplitScreen';
-import nariri_school from './assets/nariri_school.jpg';
-import { BrowserRouter as Router } from 'react-router-dom';
+// App.jsx
+import "./App.css";
+import SplitScreen from "./SplitScreen";
+import ContactPage from "./ContactPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <SplitScreen/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SplitScreen />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </Router>
   );
 }
