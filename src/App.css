@@ -70,6 +70,10 @@ body, html, #root {
 .left-pane {
   background-color: #f0f0f0;
   color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .right-pane {
