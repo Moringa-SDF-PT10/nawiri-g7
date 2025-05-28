@@ -5,6 +5,7 @@ import PlaceholderStudentDashboard from "./PlaceholderStudentDashboard";
 import PlaceholderTeacherDashboard from "./PlaceholderTeacherDashboard";
 import App from "./App";
 import ForgotPassword from "./auth/ForgotPassword";
+import PlaceholderProfile from "./PlaceholderProfile";
 
 export const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -14,4 +15,5 @@ export const router = createBrowserRouter([
 
   { path: "/dashboard-teacher", element: <PlaceholderTeacherDashboard /> },
   { path: "/dashboard-student", element: <PlaceholderStudentDashboard /> },
+  {path: "/new-student", element: <PlaceholderProfile /> }
 ]);
