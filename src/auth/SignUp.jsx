@@ -11,8 +11,8 @@ function SignUp() {
   console.log(session)
 
   return (
-    <>
-      <form className="signup-form">
+    <div className="signup">
+      <form className="form">
         <h2 className="header">Sign up today!</h2>
         <div className="inputs">
           <input
@@ -30,7 +30,7 @@ function SignUp() {
         </div>
         <button className="submit" type="submit" disabled={loading}> Sign Up</button>
       </form>
-    </>
+    </div>
   );
 }
 

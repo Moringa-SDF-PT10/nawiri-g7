@@ -54,6 +54,40 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+/* Sign-up styles */
+.signup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup .form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 300px;
+}
+.signup .form h2 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.signup .form .inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+  
+}
+.signup .form .inputs .email, .signup .form .inputs .password {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
