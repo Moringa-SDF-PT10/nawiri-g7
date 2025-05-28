@@ -30,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   //Sign in function
-  const signInUser = async ({ email, password }) => {
+  const signInUser = async (email, password) => {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email,
@@ -40,8 +40,7 @@ export const AuthContextProvider = ({ children }) => {
         console.error("Sign-in Error occurred: ", error);
         return { success: false, error: error.message };
       }
-      console.log("Sign in success: ", data)
-      return { success: true, data}
+      return { success: true, data };
     } catch (error) {
       console.error("Error occurred: ", error);
     }
@@ -56,7 +55,9 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ session, signUpNewUser, signInUser, signOut }}>
+    <AuthContext.Provider
+      value={{ session, signUpNewUser, signInUser, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

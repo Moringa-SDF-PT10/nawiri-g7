@@ -25,7 +25,9 @@ export default function SplitScreen() {
             them achieve their academic and career goals.
           </p>
           <div className="button-group">
-            <button className="primary-button">Student</button>
+            <Link to="/signin" className="primary-button">
+              Student
+            </Link>
             <button className="secondary-button">Teacher</button>
           </div>
           <p>

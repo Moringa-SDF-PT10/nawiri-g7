@@ -2,20 +2,20 @@ import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-function SignUp() {
+function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
 
-  const { session, signUpNewUser } = UserAuth();
+  const { session, signInUser } = UserAuth();
   const navigate = useNavigate();
 
-  const handleSignUp = async (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const result = await signUpNewUser(email, password);
+      const result = await signInUser(email, password);
       if (result.success) {
         navigate("/dashboard-student");
       }
@@ -27,9 +27,9 @@ function SignUp() {
   };
 
   return (
-    <div className="signup">
-      <form onSubmit={handleSignUp} className="form">
-        <h2 className="header">Sign up today!</h2>
+    <div className="signin">
+      <form onSubmit={handleSignIn} className="form">
+        <h2 className="header">Hi Student, Sign in Here</h2>
         <div className="inputs">
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -46,12 +46,12 @@ function SignUp() {
         </div>
         <button className="submit" type="submit" disabled={loading}>
           {" "}
-          Sign Up
+          Sign In
         </button>
-        {error && <p className="signup-error"> {error} </p>}
+        {error && <p className="signin-error"> {error} </p>}
       </form>
     </div>
   );
 }
 
-export default SignUp;
+export default SignIn;

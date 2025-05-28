@@ -1,7 +1,7 @@
 function ForgotPassword() {
   return (
     <>
-      <h2> Reset Password Here😂😂😂 </h2>
+      <h2> No Resetting Password Here😂😂😂 Men at Work 👷⚒️ </h2>
     </>
   );
 }

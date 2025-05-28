@@ -101,7 +101,38 @@ padding: 3px 4px 3px 4px;
 width: fit-content;
 }
 
+/* Sign-in Styles */
 
+.signin {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin .form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 300px;
+}
+.sign-in .form h2 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.sign-in .form .inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+  
+}
+.sigin .form .inputs .email, .signup .form .inputs .password {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
