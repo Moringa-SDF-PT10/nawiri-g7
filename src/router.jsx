@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import SignUp from "./auth/SignUp";
+import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import PlaceholderStudentDashboard from "./PlaceholderStudentDashboard";
 import PlaceholderTeacherDashboard from "./PlaceholderTeacherDashboard";
@@ -10,7 +10,7 @@ import PrivateRoute from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   { path: "/", element: <App /> },
-  { path: "/signup", element: <SignUp /> },
+  { path: "/signup", element: <SignUpPage /> },
   { path: "/signin", element: <SignInPage /> },
   { path: "/forgot-password", element: <ForgotPassword /> },
 

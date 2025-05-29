@@ -2,10 +2,10 @@ import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import SignInForm from "../components/auth/SignInForm";
+import { Link } from "react-router-dom";
 
 function SignInPage() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
 
@@ -36,9 +36,9 @@ function SignInPage() {
       )}
       <SignInForm onSubmit={handleSignIn} />
       <div className="mt-4 text-center">
-        <a href="/reset-password" className="text-blue-600 hover:underline">
+        <Link to="/reset-password" className="text-blue-600 hover:underline">
           Forgot password?
-        </a>
+        </Link>
       </div>
     </div>
   );
