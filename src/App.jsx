@@ -1,16 +1,27 @@
+// src/App.js
 import { BrowserRouter as Router } from 'react-router-dom';
-import AppRoutes from './routes';
-import { AuthProvider } from './context/AuthContext.jsx'; // or just './context/AuthContext' and rely on bundler resolution
-import Layout from './components/common/Layout';
+import AppRoutes from './routes'; // Import AppRoutes
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Simulate fetching user data
+    const fetchedUser = { id: 1, name: 'student', email: 'student@example.com', role: 'student' };
+    setTimeout(() => {
+      setUser(fetchedUser);
+    }, 500);
+  }, []);
+
+  if (user === null) {
+    return <div>Loading user data...</div>;
+  }
+
   return (
     <Router>
-      <AuthProvider>
-        <Layout>
-          <AppRoutes />
-        </Layout>
-      </AuthProvider>
+      {/* Pass the user state to AppRoutes */}
+      <AppRoutes user={user} />
     </Router>
   );
 }
