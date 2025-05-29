@@ -5,7 +5,6 @@ import SignInForm from "../components/auth/SignInForm";
 import { Link } from "react-router-dom";
 
 function SignInPage() {
-
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
 

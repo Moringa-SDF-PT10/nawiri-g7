@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-
-
-function SignUpForm( {onSubmit} ) {
+function SignUpForm({ onSubmit }) {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -111,6 +109,6 @@ function SignUpForm( {onSubmit} ) {
       </button>
     </form>
   );
-};
+}
 
 export default SignUpForm;
