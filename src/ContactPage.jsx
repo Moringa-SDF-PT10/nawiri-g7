@@ -3,20 +3,31 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function ContactPage() {
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    number: "",
+    message: "",
+  });
+
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     document.title = "Contact Us";
   }, []);
 
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate message send
     setSuccess(true);
-    setMessage("");
+    setFormData({ name: "", number: "", message: "" });
 
-    // Hide message after 3 seconds
+    // Hide success message after 3 seconds
     setTimeout(() => setSuccess(false), 3000);
   };
 
@@ -26,16 +37,37 @@ function ContactPage() {
         <h1>Contact Us</h1>
         <p>If you have any enquiries, please contact us here.</p>
         <form onSubmit={handleSubmit} className="contact-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <br />
+          <input
+            type="tel"
+            name="number"
+            placeholder="Your phone number"
+            value={formData.number}
+            onChange={handleChange}
+            required
+          />
+          <br />
           <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder="Your message"
             rows="5"
             cols="30"
             required
           />
           <br />
-          <button type="submit" className="primary-button">Send Message</button>
+          <button type="submit" className="primary-button">
+            Send Message
+          </button>
         </form>
 
         {success && (
