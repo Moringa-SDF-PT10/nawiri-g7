@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import SplitScreen from "./SplitScreen";
 import ContactPage from "./ContactPage";
+import About from "./About";
 
 
 export default function App() {
@@ -13,6 +14,8 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<SplitScreen />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<About />} />
+          {/* Add more routes as needed */}
         </Route>
       </Routes>
     </BrowserRouter>
