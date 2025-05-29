@@ -13,6 +13,9 @@ export default function SplitScreen() {
         </p>
         <div className="button-group">
           <button className="primary-button">Student</button>
+          <Link to="/signin" className="primary-button">
+              Student Sign In
+            </Link>
           <button className="secondary-button">Teacher</button>
         </div>
         <p>
