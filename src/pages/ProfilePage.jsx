@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import Sidebar from "../components/dashboard/Sidebar";
+import DashboardSidebar from "../components/dashboard/DashboardSidebar";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const ProfilePage = () => {
@@ -13,7 +13,7 @@ const ProfilePage = () => {
 
   return (
     <div className="flex">
-      <Sidebar />
+      <DashboardSidebar />
       <div className="flex-1 p-6 ml-64">
         <h1 className="text-2xl font-bold mb-6">Profile</h1>
         <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">

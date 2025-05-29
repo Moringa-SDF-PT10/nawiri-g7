@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
-const Sidebar = () => {
+const DashboardSidebar = () => {
   const location = useLocation();
   const { session } = UserAuth();
 
@@ -11,7 +11,7 @@ const Sidebar = () => {
       : "text-gray-700";
   };
 
-  if (!session) return null; // Don't render if no session
+  if (!session) return null;
 
   return (
     <div className="w-64 bg-white shadow-md h-screen fixed">
@@ -23,7 +23,7 @@ const Sidebar = () => {
         <ul className="space-y-2">
           <li>
             <Link
-              to="/dashboard"
+              to="/dashboard" 
               className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard")}`}
             >
               Overview
@@ -31,24 +31,24 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              to="dashboard/courses"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/courses")}`}
+              to="courses" 
+              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/courses")}`}
             >
               Courses
             </Link>
           </li>
           <li>
             <Link
-              to="dashboard/lessons"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/lessons")}`}
+              to="lessons" 
+              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/lessons")}`}
             >
               Lessons
             </Link>
           </li>
           <li>
             <Link
-              to="dashboard/profile"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/profile")}`}
+              to="profile"
+              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/profile")}`}
             >
               Profile
             </Link>
@@ -59,4 +59,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default DashboardSidebar;

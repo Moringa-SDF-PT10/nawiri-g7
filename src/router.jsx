@@ -15,7 +15,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
-import DashboardPage from "./pages/DashboardPage";
+import DashboardHome from "./pages/DashboardHome";
 import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <DashboardPage />,
+            element: <DashboardHome />,
           },
           {
             path: "courses",
