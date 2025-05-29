@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
     const location = useLocation();
     const { user } = useContext(AuthContext);
 
@@ -11,10 +11,21 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="w-64 bg-white shadow-md h-screen fixed">
-            <div className="p-4 border-b">
-                <h2 className="text-xl font-semibold">Dashboard</h2>
-                <p className="text-sm text-gray-500">{user?.name}</p>
+        <div className="w-64 bg-white shadow-md h-screen lg:h-auto lg:min-h-screen">
+            <div className="p-4 border-b flex justify-between items-center">
+                <div>
+                    <h2 className="text-xl font-semibold">Dashboard</h2>
+                    <p className="text-sm text-gray-500">{user?.name}</p>
+                </div>
+                <button
+                    onClick={onClose}
+                    className="lg:hidden p-1 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100"
+                    aria-label="Close sidebar"
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
             <nav className="p-4">
                 <ul className="space-y-2">
@@ -22,24 +33,19 @@ const Sidebar = () => {
                         <Link
                             to="/dashboard"
                             className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive('/dashboard')}`}
+                            onClick={onClose}
                         >
                             Overview
                         </Link>
                     </li>
                     {user?.role === 'admin' && (
                         <>
-                            <li>
-                                <Link
-                                    to="/users"
-                                    className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive('/users')}`}
-                                >
-                                    Users
-                                </Link>
-                            </li>
+
                             <li>
                                 <Link
                                     to="/courses"
                                     className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive('/courses')}`}
+                                    onClick={onClose}
                                 >
                                     Courses
                                 </Link>
@@ -48,6 +54,7 @@ const Sidebar = () => {
                                 <Link
                                     to="/lessons"
                                     className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive('/lessons')}`}
+                                    onClick={onClose}
                                 >
                                     Lessons
                                 </Link>
@@ -58,6 +65,7 @@ const Sidebar = () => {
                         <Link
                             to="/profile"
                             className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive('/profile')}`}
+                            onClick={onClose}
                         >
                             Profile
                         </Link>
