@@ -19,7 +19,7 @@ export default function Layout() {
       {/* Render the page content */}
       <Outlet />
 
-      {/* Footer */}
+      {/* DashboardFooter */}
       <footer className="footer">
         <p>© {new Date().getFullYear()} Nawiri. All rights reserved.</p>
       </footer>

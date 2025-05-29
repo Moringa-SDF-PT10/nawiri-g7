@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "./context/AuthContext";
 
 const Sidebar = () => {
   const location = useLocation();

@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "./context/AuthContext";
 
-const Header = () => {
-  const { user, logout } = useContext(AuthContext);
+const DashboardHeader = () => {
+    const { session, signOut } = UserAuth();
+    const navigate = useNavigate();
+
+
+      const handleSignOut = async (e) => {
+    e.preventDefault();
+    try {
+      await signOut();
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <header className="bg-blue-600 text-white p-4 shadow-md">
@@ -13,15 +25,15 @@ const Header = () => {
         </Link>
         <nav>
           <ul className="flex space-x-6">
-            {!user ? (
+            {!session ? (
               <>
                 <li>
-                  <Link to="/login" className="hover:underline">
+                  <Link to="/signin" className="hover:underline">
                     Login
                   </Link>
                 </li>
                 <li>
-                  <Link to="/register" className="hover:underline">
+                  <Link to="/signup" className="hover:underline">
                     Register
                   </Link>
                 </li>
@@ -34,17 +46,17 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/courses" className="hover:underline">
+                  <Link to="dashboard/courses" className="hover:underline">
                     Courses
                   </Link>
                 </li>
                 <li>
-                  <Link to="/lessons" className="hover:underline">
+                  <Link to="dashboard/lessons" className="hover:underline">
                     Lessons
                   </Link>
                 </li>
                 <li>
-                  <button onClick={logout} className="hover:underline">
+                  <button onClick={handleSignOut} className="hover:underline">
                     Logout
                   </button>
                 </li>
@@ -57,4 +69,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default DashboardHeader;
