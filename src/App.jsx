@@ -15,7 +15,7 @@ export default function App() {
           <Route path="/" element={<SplitScreen />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<About />} />
-          {/* Add more routes as needed */}
+        
         </Route>
       </Routes>
     </BrowserRouter>

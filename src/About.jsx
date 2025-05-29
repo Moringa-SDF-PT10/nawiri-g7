@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import nawiri_about from "./assets/nawiri_about.jpg";
 import "./App.css";
 

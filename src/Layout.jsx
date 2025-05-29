@@ -11,7 +11,7 @@ export default function Layout() {
         <div className="logo">Nawiri</div>
         <div className="nav-links">
           <Link to="/">Home</Link>
-          <a href="#">About</a>
+          <Link to ="/About">About</Link>
           <Link to="/contact">Contact</Link>
         </div>
       </nav>
