@@ -8,7 +8,7 @@ export default function Layout() {
     <div className="page-wrapper">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="logo">Nawiri</div>
+        <div className="logo"><Link to="/"> Nawiri </Link>  </div>
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to ="/About">About</Link>
