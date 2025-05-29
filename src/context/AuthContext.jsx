@@ -25,10 +25,12 @@ export const AuthContextProvider = ({ children }) => {
       setLoading(false);
     });
 
-    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      setLoading(false);
-    });
+    const { data: subscription } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setSession(session);
+        setLoading(false);
+      },
+    );
 
     return () => {
       subscription?.subscription?.unsubscribe();

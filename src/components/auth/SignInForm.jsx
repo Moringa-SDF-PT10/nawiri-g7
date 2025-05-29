@@ -1,22 +1,12 @@
 import { useState } from "react";
 
-const LoginForm = ({ onSubmit }) => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCredentials((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+function SignInForm({ onSubmit }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(credentials);
+    onSubmit(email, password);
   };
 
   return (
@@ -32,8 +22,8 @@ const LoginForm = ({ onSubmit }) => {
           type="email"
           id="email"
           name="email"
-          value={credentials.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />
@@ -49,8 +39,8 @@ const LoginForm = ({ onSubmit }) => {
           type="password"
           id="password"
           name="password"
-          value={credentials.password}
-          onChange={handleChange}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />
@@ -63,6 +53,6 @@ const LoginForm = ({ onSubmit }) => {
       </button>
     </form>
   );
-};
+}
 
-export default LoginForm;
+export default SignInForm;
