@@ -252,3 +252,17 @@ a {
   height: 100%;
   object-fit: cover;
 }
+
+
+
+.success-message {
+  color: rgb(189, 5, 100);
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

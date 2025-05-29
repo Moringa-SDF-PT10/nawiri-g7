@@ -1,10 +1,10 @@
-// src/ContactPage.jsx
 import nawiri_contact from "./assets/nawiri_contact.jpg";
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function ContactPage() {
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     document.title = "Contact Us";
@@ -12,8 +12,12 @@ function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent: " + message);
+    // Simulate message send
+    setSuccess(true);
     setMessage("");
+
+    // Hide message after 3 seconds
+    setTimeout(() => setSuccess(false), 3000);
   };
 
   return (
@@ -33,6 +37,10 @@ function ContactPage() {
           <br />
           <button type="submit" className="primary-button">Send Message</button>
         </form>
+
+        {success && (
+          <p className="success-message">Your message has been sent!</p>
+        )}
       </div>
       <div className="right-pane">
         <img src={nawiri_contact} alt="Nariri School" className="full-image" />
