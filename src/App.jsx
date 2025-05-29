@@ -1,9 +1,23 @@
-import './App.css';
-import SplitScreen from './SplitScreen';
-import nariri_school from './assets/nariri_school.jpg';
+// src/App.jsx
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import SplitScreen from "./SplitScreen";
+import ContactPage from "./ContactPage";
+import About from "./About";
+
 
 export default function App() {
   return (
-    <SplitScreen/>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<SplitScreen />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<About />} />
+        
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
