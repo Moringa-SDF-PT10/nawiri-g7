@@ -12,9 +12,7 @@ import SplitScreen from "./SplitScreen";
 import ContactPage from "./ContactPage";
 import About from "./About";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
+
 import DashboardHome from "./pages/DashboardHome";
 import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
