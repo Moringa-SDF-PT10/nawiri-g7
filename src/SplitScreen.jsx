@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function SplitScreen() {
   return (
-    <div className="split-container">
-      <div className="left-pane">
-        <h1>Welcome To Nawiri</h1>
+    <div className="split-container animated-container">
+      <div className="left-pane fade-in-left">
+        <h1>Welcome To <span className="brand-name">Nawiri</span></h1>
         <p>
-          Nawiri is a platform that connects students with mentors to help them
-          achieve their academic and career goals.
+          Nawiri connects students with mentors to help them achieve their
+          academic and career goals.
         </p>
         <div className="button-group">
           <button className="primary-button">Student</button>
@@ -20,7 +20,7 @@ export default function SplitScreen() {
           <Link to="/forgot-password">Forgot Password</Link>
         </p>
       </div>
-      <div className="right-pane">
+      <div className="right-pane fade-in-right">
         <img src={nariri_school} alt="Nariri School" className="full-image" />
       </div>
     </div>
