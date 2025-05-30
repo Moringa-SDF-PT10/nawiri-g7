@@ -21,7 +21,7 @@ export default function SplitScreen() {
           <button className="secondary-button">Teacher</button>
         </div>
         <p>
-          Are you a new user? <Link to="/signup">Sign in</Link> |{" "}
+          Are you a new user? <Link to="/signup">Sign Up</Link> |{" "}
           <Link to="/reset-password">Forgot Password</Link>
         </p>
       </div>

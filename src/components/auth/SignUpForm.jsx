@@ -6,10 +6,13 @@ function SignUpForm({ onSubmit }) {
     email: "",
     password: "",
     confirmPassword: "",
+    firstName: "",
+    lastName: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
     setUserData((prev) => ({
       ...prev,
       [name]: value,
@@ -22,8 +25,11 @@ function SignUpForm({ onSubmit }) {
       alert("Passwords don't match!");
       return;
     }
+
+    
     onSubmit({
-      name: userData.name,
+      firstName: userData.firstName,
+      lastName: userData.lastName,
       email: userData.email,
       password: userData.password,
     });
@@ -33,16 +39,33 @@ function SignUpForm({ onSubmit }) {
     <form onSubmit={handleSubmit} className="form-horizontal w-full mx-auto">
       <div className="flex flex-col mt-4">
         <label
-          htmlFor="name"
+          htmlFor="first-name"
           className="block text-sm font-medium text-gray-700"
         >
-          Full Name
+          First Name
         </label>
         <input
           type="text"
-          id="name"
-          name="name"
-          value={userData.name}
+          id="first-name"
+          name="firstName"
+          value={userData.firstName}
+          onChange={handleChange}
+          required
+          className="flex-grow h-8 px-2 border rounded border-grey-400"
+        />
+      </div>
+      <div className="flex flex-col mt-4">
+        <label
+          htmlFor="last-name"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Last Name
+        </label>
+        <input
+          type="text"
+          id="last-name"
+          name="lastName"
+          value={userData.lastName}
           onChange={handleChange}
           required
           className="flex-grow h-8 px-2 border rounded border-grey-400"

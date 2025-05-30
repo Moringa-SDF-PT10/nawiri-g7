@@ -5,7 +5,7 @@ import SignInForm from "../components/auth/SignInForm2";
 import { Link } from "react-router-dom";
 
 function SignInPage() {
-  const [error, setError] = useState("");
+  const [signinError, setSigninError] = useState("");
   const [loading, setLoading] = useState("");
 
   const { session, signInUser } = UserAuth();
@@ -18,10 +18,11 @@ function SignInPage() {
       if (result.success) {
         navigate("/dashboard");
       } else {
-        setError(result.message || "Authentication error!");
+        setSigninError(result.error || "Authentication error!");
+        
       }
     } catch (err) {
-      setError("Login failed");
+      setSigninError("Login failed");
     } finally {
       setLoading(false);
     }
@@ -38,18 +39,18 @@ function SignInPage() {
             </h1>
             <div className="w-full mt-4 flex flex-col gap-2">
               <SignInForm onSubmit={handleSignIn} />
-              {error && (
+              {signinError && (
                 <div className="mb-4 p-2 bg-red-100 w-4/5 text-red-700 rounded self-center">
-                  {error}
+                  {signinError}
                 </div>
               )}
               <div className="text-center mt-4">
-                <a
+                <Link
                   className="no-underline hover:underline text-blue-dark text-xs"
-                  href="/reset-password"
+                  to="/reset-password"
                 >
                   Forgot Your Password?
-                </a>
+                </Link>
               </div>
             </div>
           </div>

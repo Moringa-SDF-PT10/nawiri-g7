@@ -10,6 +10,23 @@ const ProfilePage = () => {
     navigate("/reset-password");
   };
 
+  const user = session?.user;
+  const userMetadata = user?.user_metadata || {};
+
+  const fullName =
+    userMetadata.fullName ||
+    (userMetadata.firstName && userMetadata.lastName
+      ? `${userMetadata.firstName} ${userMetadata.lastName}`
+      : "User");
+
+  const memberSince = user?.created_at
+    ? new Date(user.created_at).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : "Unknown";
+
   return (
     <div className="flex">
       <DashboardSidebar />
@@ -18,11 +35,11 @@ const ProfilePage = () => {
         <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
           <div className="flex items-center mb-6">
             <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl font-bold mr-4">
-              {`name coming soon`}
+              {fullName.charAt(0)}
             </div>
             <div>
-              <h2 className="text-xl font-semibold">{`name coming soon`}</h2>
-              <p className="text-gray-600">{session?.user?.email}</p>
+              <h2 className="text-xl font-semibold">{fullName}</h2>
+              <p className="text-gray-600">{user?.email}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -30,11 +47,10 @@ const ProfilePage = () => {
               <h3 className="text-lg font-medium mb-2">Personal Information</h3>
               <div className="space-y-2">
                 <p>
-                  <span className="font-medium">Role:</span> {`Student`}
+                  <span className="font-medium">Role:</span> Student
                 </p>
                 <p>
-                  <span className="font-medium">Member Since:</span>{" "}
-                  {`coming soon`}
+                  <span className="font-medium">Member Since:</span> {memberSince}
                 </p>
               </div>
             </div>

@@ -14,11 +14,17 @@ function SignUpPage() {
   const handleSignUp = async (userData) => {
     setLoading(true);
     try {
-      const result = await signUpNewUser(userData.email, userData.password);
+      const result = await signUpNewUser(
+        userData.email,
+        userData.password,
+        userData.firstName,
+        userData.lastName,
+      );
       if (result.success) {
         navigate("/dashboard");
       } else {
-        setError("Authentication error occurred.")
+        setError(result.error.message || "Authentication error occurred")
+        console.log(result);
       }
     } catch (err) {
       setError("An error occurred");
@@ -33,7 +39,9 @@ function SignUpPage() {
         <div className="flex flex-col w-full md:w-1/2 p-4 bg-gray-100 rounded-lg">
           <div className="flex flex-col flex-1 justify-center mb-8">
             <div className="w-full mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
-              <h2 className="text-2xl font-bold mb-6 text-center text-rose-900">Register</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center text-rose-900">
+                Register
+              </h2>
               {error && (
                 <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">
                   {error}
