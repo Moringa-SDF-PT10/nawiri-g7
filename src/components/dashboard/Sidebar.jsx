@@ -1,10 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+// src/components/dashboard/Sidebar.js
+import { Link, useLocation } from 'react-router-dom';
 
-const Sidebar = ({ onClose }) => {
+const Sidebar = ({ onClose, user }) => { // user prop is still essential for showing student name
     const location = useLocation();
-    const { user } = useContext(AuthContext);
 
     const isActive = (path) => {
         return location.pathname === path
@@ -16,7 +14,7 @@ const Sidebar = ({ onClose }) => {
         <div className="w-64 bg-white shadow-md h-screen lg:h-auto lg:min-h-screen">
             <div className="p-4 border-b flex justify-between items-center">
                 <div>
-                    <h2 className="text-xl font-semibold">Dashboard</h2>
+                    <h2 className="text-xl font-semibold">Student Panel</h2> {/* Changed title */}
                     <p className="text-sm text-gray-500">{user?.name}</p>
                 </div>
                 <button
@@ -40,9 +38,9 @@ const Sidebar = ({ onClose }) => {
                             Overview
                         </Link>
                     </li>
-                    {user?.role === 'admin' && (
+                    {/* Removed admin-specific links */}
+                    {/* {user?.role === 'admin' && (
                         <>
-
                             <li>
                                 <Link
                                     to="/courses"
@@ -62,7 +60,17 @@ const Sidebar = ({ onClose }) => {
                                 </Link>
                             </li>
                         </>
-                    )}
+                    )} */}
+                    {/* Add a "My Courses" link for students if desired */}
+                    <li>
+                        <Link
+                            to="/courses"
+                            className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive('/my-courses')}`}
+                            onClick={onClose}
+                        >
+                            My Courses
+                        </Link>
+                    </li>
                     <li>
                         <Link
                             to="/profile"
@@ -71,6 +79,15 @@ const Sidebar = ({ onClose }) => {
                         >
                             Profile
                         </Link>
+                    </li>
+                    {/* You might also add a Logout button here */}
+                    <li>
+                        <button
+                            onClick={() => { /* Implement logout logic here */ onClose(); }}
+                            className="block w-full text-left px-4 py-2 rounded-md text-gray-700 hover:bg-red-50 hover:text-red-600"
+                        >
+                            Logout
+                        </button>
                     </li>
                 </ul>
             </nav>

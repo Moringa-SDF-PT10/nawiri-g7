@@ -1,8 +1,14 @@
 import "./App.css";
 import nariri_school from "./assets/nariri_school.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SplitScreen() {
+  const navigate = useNavigate();
+
+  const handleStudentClick = () => {
+    navigate('/dashboard'); // Navigate to dashboard when Student button is clicked
+  };
+
   return (
     <div className="split-container animated-container">
       <div className="left-pane fade-in-left">
@@ -12,10 +18,15 @@ export default function SplitScreen() {
           academic and career goals.
         </p>
         <div className="button-group">
-          <button className="primary-button">Student</button>
+          <button
+            className="primary-button"
+            onClick={handleStudentClick}
+          >
+            Student
+          </button>
           <Link to="/signin" className="primary-button">
-              Student Sign In
-            </Link>
+            Student Sign In
+          </Link>
           <button className="secondary-button">Teacher</button>
         </div>
         <p>

@@ -14,51 +14,51 @@ import About from "./About";
 
 
 export const router = createBrowserRouter([
-  { path: "/", element: <App /> },
+    { path: "/", element: <App /> },
     {
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <SplitScreen />,
-      },
-      {
-        path: '/contact',
-        element: <ContactPage />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-    ],
-  },
-  { path: "/signup", element: <SignUpPage /> },
-  { path: "/signin", element: <SignInPage /> },
-  { path: "/forgot-password", element: <ForgotPassword /> },
+        element: <Layout />,
+        children: [
+            {
+                path: '/',
+                element: <SplitScreen />,
+            },
+            {
+                path: '/contact',
+                element: <ContactPage />,
+            },
+            {
+                path: '/about',
+                element: <About />,
+            },
+        ],
+    },
+    { path: "/signup", element: <SignUpPage /> },
+    { path: "/signin", element: <SignInPage /> },
+    { path: "/forgot-password", element: <ForgotPassword /> },
 
-  {
-    path: "/dashboard-teacher",
-    element: (
-      <PrivateRoute>
-        {" "}
-        <PlaceholderTeacherDashboard />{" "}
-      </PrivateRoute>
-    ),
-  },
-  {
-    path: "/dashboard-student",
-    element: (
-      <PrivateRoute>
-        <PlaceholderStudentDashboard />{" "}
-      </PrivateRoute>
-    ),
-  },
-  {
-    path: "/new-student",
-    element: (
-      <PrivateRoute>
-        <PlaceholderProfile />{" "}
-      </PrivateRoute>
-    ),
-  },
+    {
+        path: "/dashboard-teacher",
+        element: (
+            <PrivateRoute>
+                {" "}
+                <PlaceholderTeacherDashboard />{" "}
+            </PrivateRoute>
+        ),
+    },
+    {
+        path: "/dashboard-student",
+        element: (
+            <PrivateRoute>
+                <PlaceholderStudentDashboard />{" "}
+            </PrivateRoute>
+        ),
+    },
+    {
+        path: "/new-student",
+        element: (
+            <PrivateRoute>
+                <PlaceholderProfile />{" "}
+            </PrivateRoute>
+        ),
+    },
 ]);

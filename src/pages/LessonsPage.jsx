@@ -34,8 +34,9 @@ const lessons = [
   },
 ];
 
-const LessonsPage = () => {
-  const [filter, setFilter] = useState("all");
+// LessonsPage needs to accept the 'user' prop from its parent (e.g., App.js or AppRoutes)
+const LessonsPage = ({ user }) => { // <--- Receive user as a prop
+  const [filter, setFilter] = useState('all');
 
   const filteredLessons =
     filter === "all"
@@ -44,7 +45,8 @@ const LessonsPage = () => {
 
   return (
     <div className="flex">
-      <Sidebar />
+      {/* Pass the user prop to Sidebar */}
+      <Sidebar user={user} /> {/* <--- Pass user to Sidebar */}
       <div className="flex-1 p-6 ml-64">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Lessons</h1>
@@ -62,39 +64,21 @@ const LessonsPage = () => {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Title
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Course
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Duration
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Actions
-                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Course</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {filteredLessons.map((lesson) => (
+              {filteredLessons.map(lesson => (
                 <tr key={lesson.id}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {lesson.title}
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{lesson.title}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lesson.course}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{lesson.duration}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {lesson.course}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {lesson.duration}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <button className="text-blue-600 hover:text-blue-900 mr-3">
-                      View
-                    </button>
-                    <button className="text-green-600 hover:text-green-900">
-                      Edit
-                    </button>
+                    <button className="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                    <button className="text-green-600 hover:text-green-900">Edit</button>
                   </td>
                 </tr>
               ))}
