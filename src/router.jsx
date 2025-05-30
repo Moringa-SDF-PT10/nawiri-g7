@@ -36,40 +36,38 @@ export const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-        { path: "/signup", element: <SignUpPage /> },
-  { path: "/signin", element: <SignInPage /> },
-  { path: "/reset-password", element: <ResetPassword /> },
-  {
-    path: "/dashboard",
-    element: <PrivateRoute />,
-    children: [
+      { path: "/signup", element: <SignUpPage /> },
+      { path: "/signin", element: <SignInPage /> },
+      { path: "/reset-password", element: <ResetPassword /> },
       {
-        element: <DashboardLayout />,
+        path: "/dashboard",
+        element: <PrivateRoute />,
         children: [
           {
-            index: true,
-            element: <DashboardHome />,
-          },
-          {
-            path: "courses",
-            element: <CoursesPage />,
-          },
-          {
-            path: "lessons",
-            element: <LessonsPage />,
-          },
-          {
-            path: "profile",
-            element: <ProfilePage />,
+            element: <DashboardLayout />,
+            children: [
+              {
+                index: true,
+                element: <DashboardHome />,
+              },
+              {
+                path: "courses",
+                element: <CoursesPage />,
+              },
+              {
+                path: "lessons",
+                element: <LessonsPage />,
+              },
+              {
+                path: "profile",
+                element: <ProfilePage />,
+              },
+            ],
           },
         ],
       },
     ],
   },
-
-    ],
-  },
-
 
   {
     path: "/dashboard-placeholder",
@@ -81,7 +79,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-
-  
-  
 ]);

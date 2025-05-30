@@ -1,7 +1,5 @@
 const DashboardFooter = () => {
-  return (
-    <>/</>
-  );
+  return <>/</>;
 };
 
 export default DashboardFooter;
