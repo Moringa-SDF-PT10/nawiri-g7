@@ -18,7 +18,7 @@ function SignInPage() {
       if (result.success) {
         navigate("/dashboard");
       } else {
-        setError(result.message || "Login failed");
+        setError(result.message || "Authentication error!");
       }
     } catch (err) {
       setError("Login failed");

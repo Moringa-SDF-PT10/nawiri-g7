@@ -30,7 +30,7 @@ function SignUpForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-horizontal w-3/4 mx-auto">
+    <form onSubmit={handleSubmit} className="form-horizontal w-full mx-auto">
       <div className="flex flex-col mt-4">
         <label
           htmlFor="name"
@@ -103,7 +103,7 @@ function SignUpForm({ onSubmit }) {
       </div>
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded mt-4"
       >
         Register
       </button>
