@@ -4,10 +4,10 @@ import { UserAuth } from "../context/AuthContext";
 const DashboardOverview = () => {
   const { session } = UserAuth();
 
-    const user = session?.user;
+  const user = session?.user;
   const userMetadata = user?.user_metadata || {};
 
-  const firstName = userMetadata.firstName || "Student"
+  const firstName = userMetadata.firstName || "Student";
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center py-16 px-6 bg-[#e8ded4]">

@@ -50,7 +50,8 @@ const ProfilePage = () => {
                   <span className="font-medium">Role:</span> Student
                 </p>
                 <p>
-                  <span className="font-medium">Member Since:</span> {memberSince}
+                  <span className="font-medium">Member Since:</span>{" "}
+                  {memberSince}
                 </p>
               </div>
             </div>

@@ -23,7 +23,7 @@ function SignUpPage() {
       if (result.success) {
         navigate("/dashboard");
       } else {
-        setError(result.error.message || "Authentication error occurred")
+        setError(result.error.message || "Authentication error occurred");
         console.log(result);
       }
     } catch (err) {

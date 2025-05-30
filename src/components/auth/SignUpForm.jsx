@@ -12,7 +12,7 @@ function SignUpForm({ onSubmit }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setUserData((prev) => ({
       ...prev,
       [name]: value,
@@ -26,7 +26,6 @@ function SignUpForm({ onSubmit }) {
       return;
     }
 
-    
     onSubmit({
       firstName: userData.firstName,
       lastName: userData.lastName,

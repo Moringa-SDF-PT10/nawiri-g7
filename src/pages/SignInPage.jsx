@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import SignInForm from "../components/auth/SignInForm2";
+import SignInForm from "../components/auth/SignInForm";
 import { Link } from "react-router-dom";
 
 function SignInPage() {
@@ -19,7 +19,6 @@ function SignInPage() {
         navigate("/dashboard");
       } else {
         setSigninError(result.error || "Authentication error!");
-        
       }
     } catch (err) {
       setSigninError("Login failed");
