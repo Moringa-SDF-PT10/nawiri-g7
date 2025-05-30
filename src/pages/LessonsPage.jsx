@@ -34,8 +34,7 @@ const lessons = [
   },
 ];
 
-// LessonsPage needs to accept the 'user' prop from its parent (e.g., App.js or AppRoutes)
-const LessonsPage = ({ user }) => { // <--- Receive user as a prop
+const LessonsPage = () => {
   const [filter, setFilter] = useState('all');
 
   const filteredLessons =
@@ -45,8 +44,7 @@ const LessonsPage = ({ user }) => { // <--- Receive user as a prop
 
   return (
     <div className="flex">
-      {/* Pass the user prop to Sidebar */}
-      <Sidebar user={user} /> {/* <--- Pass user to Sidebar */}
+      <Sidebar />
       <div className="flex-1 p-6 ml-64">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Lessons</h1>
