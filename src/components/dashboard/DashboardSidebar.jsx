@@ -14,7 +14,7 @@ const DashboardSidebar = () => {
   if (!session) return null;
 
   return (
-    <div className="w-64 bg-white shadow-md h-screen fixed">
+    <div className="w-64 bg-white shadow-md h-4/5 fixed">
       <div className="p-4 border-b">
         <h2 className="text-xl font-semibold">Dashboard</h2>
         <p className="text-sm text-gray-500">{session.user?.name}</p>
@@ -23,7 +23,7 @@ const DashboardSidebar = () => {
         <ul className="space-y-2">
           <li>
             <Link
-              to="/dashboard" 
+              to="/dashboard"
               className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard")}`}
             >
               Overview
@@ -31,7 +31,7 @@ const DashboardSidebar = () => {
           </li>
           <li>
             <Link
-              to="courses" 
+              to="/dashboard/courses"
               className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/courses")}`}
             >
               Courses
@@ -39,7 +39,7 @@ const DashboardSidebar = () => {
           </li>
           <li>
             <Link
-              to="lessons" 
+              to="/dashboard/lessons"
               className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/lessons")}`}
             >
               Lessons
@@ -47,7 +47,7 @@ const DashboardSidebar = () => {
           </li>
           <li>
             <Link
-              to="profile"
+              to="/dashboard/profile"
               className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/profile")}`}
             >
               Profile

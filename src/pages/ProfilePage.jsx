@@ -1,14 +1,13 @@
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { UserAuth } from "../context/AuthContext";
 import DashboardSidebar from "../components/dashboard/DashboardSidebar";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const { session } = UserAuth();
+  const navigate = useNavigate();
 
   const handleChangePasswordClick = () => {
-    navigate("/reset-password"); // Navigate to the reset password page
+    navigate("/reset-password");
   };
 
   return (
@@ -19,11 +18,11 @@ const ProfilePage = () => {
         <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
           <div className="flex items-center mb-6">
             <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl font-bold mr-4">
-              {user?.name?.charAt(0)}
+              {`name coming soon`}
             </div>
             <div>
-              <h2 className="text-xl font-semibold">{user?.name}</h2>
-              <p className="text-gray-600">{user?.email}</p>
+              <h2 className="text-xl font-semibold">{`name coming soon`}</h2>
+              <p className="text-gray-600">{session?.user?.email}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -31,18 +30,18 @@ const ProfilePage = () => {
               <h3 className="text-lg font-medium mb-2">Personal Information</h3>
               <div className="space-y-2">
                 <p>
-                  <span className="font-medium">Role:</span> {user?.role}
+                  <span className="font-medium">Role:</span> {`Student`}
                 </p>
                 <p>
-                  <span className="font-medium">Member Since:</span> January
-                  2025
+                  <span className="font-medium">Member Since:</span>{" "}
+                  {`coming soon`}
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-lg font-medium mb-2">Account Security</h3>
               <button
-                onClick={handleChangePasswordClick} // Add the onClick handler
+                onClick={handleChangePasswordClick}
                 className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
               >
                 Change Password

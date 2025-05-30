@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
 const DashboardHeader = () => {
-    const { session, signOut } = UserAuth();
-    const navigate = useNavigate();
+  const { session, signOut } = UserAuth();
+  const navigate = useNavigate();
 
-
-      const handleSignOut = async (e) => {
+  const handleSignOut = async (e) => {
     e.preventDefault();
     try {
       await signOut();
@@ -46,12 +45,12 @@ const DashboardHeader = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="dashboard/courses" className="hover:underline">
+                  <Link to="/dashboard/courses" className="hover:underline">
                     Courses
                   </Link>
                 </li>
                 <li>
-                  <Link to="dashboard/lessons" className="hover:underline">
+                  <Link to="/dashboard/lessons" className="hover:underline">
                     Lessons
                   </Link>
                 </li>

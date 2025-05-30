@@ -17,7 +17,7 @@ const courses = [
     duration: "6 weeks",
   },
   {
-    id: 2,
+    id: 3,
     title: "Advanced JavaScript",
     description: "Deep dive into JavaScript",
     instructor: "Jane Smith",
@@ -25,7 +25,7 @@ const courses = [
     duration: "6 weeks",
   },
   {
-    id: 2,
+    id: 4,
     title: "Python for Data Science",
     description: "Deep dive into JavaScript",
     instructor: "Jane Smith",
@@ -33,7 +33,7 @@ const courses = [
     duration: "6 weeks",
   },
   {
-    id: 3,
+    id: 5,
     title: "CSS with Tailwind",
     description: "Master modern CSS with Tailwind",
     instructor: "Mike Johnson",

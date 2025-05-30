@@ -1,10 +1,6 @@
 const DashboardFooter = () => {
   return (
-    <footer className="bg-gray-800 text-white p-4 mt-auto">
-      <div className="container mx-auto text-center">
-        <p>© 2025 Nawiri. All rights reserved.</p>
-      </div>
-    </footer>
+    <>/</>
   );
 };
 

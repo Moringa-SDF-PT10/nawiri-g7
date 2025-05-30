@@ -16,7 +16,7 @@ function SignInPage() {
     try {
       const result = await signInUser(email, password);
       if (result.success) {
-        navigate("/dashboard-student");
+        navigate("/dashboard");
       } else {
         setError(result.message || "Login failed");
       }
