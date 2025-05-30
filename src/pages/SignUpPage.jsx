@@ -16,7 +16,7 @@ function SignUpPage() {
     try {
       const result = await signUpNewUser(userData.email, userData.password);
       if (result.success) {
-        navigate("/dashboard-student");
+        navigate("/dashboard");
       }
     } catch (err) {
       setError("An error occurred");
