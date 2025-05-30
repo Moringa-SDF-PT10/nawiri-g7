@@ -1,7 +1,7 @@
-import { Navigate } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import { UserAuth } from "./context/AuthContext";
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = () => {
   const { session, loading } = UserAuth();
 
   if (loading) {
@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  return session ? children : <Navigate to="/signup" />;
+  return session ? <Outlet /> : <Navigate to="/signin" replace />;
 };
 
 export default PrivateRoute;

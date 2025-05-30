@@ -10,49 +10,50 @@ function SignInForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Email
-        </label>
+    <form className="form-horizontal w-3/4 mx-auto" onSubmit={handleSubmit}>
+      <div className="flex flex-col mt-4">
         <input
-          type="email"
           id="email"
+          type="text"
+          className="flex-grow h-8 px-2 border rounded border-grey-400"
           name="email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
-      <div>
-        <label
-          htmlFor="password"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Password
-        </label>
+      <div className="flex flex-col mt-4">
         <input
-          type="password"
           id="password"
+          type="password"
+          className="flex-grow h-8 px-2 rounded border border-grey-400"
           name="password"
+          required
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-      >
-        Login
-      </button>
+      <div className="flex items-center mt-4">
+        <input type="checkbox" name="remember" id="remember" className="mr-2" />
+        <label htmlFor="remember" className="text-sm text-grey-dark">
+          Remember Me
+        </label>
+      </div>
+      <div className="flex flex-col mt-8 transition-all duration-300 ease-in-out">
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded"
+        >
+          Login
+        </button>
+        
+      </div>
+      
+      
     </form>
   );
 }
-
 export default SignInForm;

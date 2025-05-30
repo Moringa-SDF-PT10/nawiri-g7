@@ -4,61 +4,79 @@ import SignInPage from "./pages/SignInPage";
 import PlaceholderStudentDashboard from "./PlaceholderStudentDashboard";
 import PlaceholderTeacherDashboard from "./PlaceholderTeacherDashboard";
 import App from "./App";
-import ForgotPassword from "./auth/ForgotPassword";
+import ResetPassword from "./auth/ResetPassword";
 import PlaceholderProfile from "./PlaceholderProfile";
-import PrivateRoute from "./PrivateRoutes";
+import PrivateRoute from "./PrivateRoute";
 import Layout from "./Layout";
 import SplitScreen from "./SplitScreen";
 import ContactPage from "./ContactPage";
 import About from "./About";
+import HomePage from "./pages/DashboardOverview";
 
+import DashboardHome from "./pages/DashboardHome";
+import CoursesPage from "./pages/CoursesPage";
+import LessonsPage from "./pages/LessonsPage";
+import ProfilePage from "./pages/ProfilePage";
+import DashboardLayout from "./components/common/DashboardLayout";
 
 export const router = createBrowserRouter([
-  { path: "/", element: <App /> },
-    {
+  
+  {
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <SplitScreen />,
       },
       {
-        path: '/contact',
+        path: "/contact",
         element: <ContactPage />,
       },
       {
-        path: '/about',
+        path: "/about",
         element: <About />,
+      },
+      { path: "/signup", element: <SignUpPage /> },
+      { path: "/signin", element: <SignInPage /> },
+      { path: "/reset-password", element: <ResetPassword /> },
+      {
+        path: "/dashboard",
+        element: <PrivateRoute />,
+        children: [
+          {
+            element: <DashboardLayout />,
+            children: [
+              {
+                index: true,
+                element: <DashboardHome />,
+              },
+              {
+                path: "courses",
+                element: <CoursesPage />,
+              },
+              {
+                path: "lessons",
+                element: <LessonsPage />,
+              },
+              {
+                path: "profile",
+                element: <ProfilePage />,
+              },
+            ],
+          },
+        ],
       },
     ],
   },
-  { path: "/signup", element: <SignUpPage /> },
-  { path: "/signin", element: <SignInPage /> },
-  { path: "/forgot-password", element: <ForgotPassword /> },
 
   {
-    path: "/dashboard-teacher",
-    element: (
-      <PrivateRoute>
-        {" "}
-        <PlaceholderTeacherDashboard />{" "}
-      </PrivateRoute>
-    ),
-  },
-  {
-    path: "/dashboard-student",
-    element: (
-      <PrivateRoute>
-        <PlaceholderStudentDashboard />{" "}
-      </PrivateRoute>
-    ),
-  },
-  {
-    path: "/new-student",
-    element: (
-      <PrivateRoute>
-        <PlaceholderProfile />{" "}
-      </PrivateRoute>
-    ),
+    path: "/dashboard-placeholder",
+    element: <PrivateRoute />,
+    children: [
+      {
+        index: true,
+        element: <PlaceholderStudentDashboard />,
+      },
+    ],
   },
 ]);

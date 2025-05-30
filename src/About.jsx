@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import nawiri_about from "./assets/nawiri_about.jpg";
 import "./App.css";
 
-
-
 function About() {
   return (
     <div className="split-container">

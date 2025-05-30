@@ -1,28 +1,44 @@
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
-import Sidebar from "../components/dashboard/Sidebar";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { UserAuth } from "../context/AuthContext";
+import DashboardSidebar from "../components/dashboard/DashboardSidebar";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const { session } = UserAuth();
+  const navigate = useNavigate();
 
   const handleChangePasswordClick = () => {
-    navigate("/reset-password"); // Navigate to the reset password page
+    navigate("/reset-password");
   };
+
+  const user = session?.user;
+  const userMetadata = user?.user_metadata || {};
+
+  const fullName =
+    userMetadata.fullName ||
+    (userMetadata.firstName && userMetadata.lastName
+      ? `${userMetadata.firstName} ${userMetadata.lastName}`
+      : "User");
+
+  const memberSince = user?.created_at
+    ? new Date(user.created_at).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : "Unknown";
 
   return (
     <div className="flex">
-      <Sidebar />
+      <DashboardSidebar />
       <div className="flex-1 p-6 ml-64">
         <h1 className="text-2xl font-bold mb-6">Profile</h1>
         <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
           <div className="flex items-center mb-6">
             <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl font-bold mr-4">
-              {user?.name?.charAt(0)}
+              {fullName.charAt(0)}
             </div>
             <div>
-              <h2 className="text-xl font-semibold">{user?.name}</h2>
+              <h2 className="text-xl font-semibold">{fullName}</h2>
               <p className="text-gray-600">{user?.email}</p>
             </div>
           </div>
@@ -31,18 +47,18 @@ const ProfilePage = () => {
               <h3 className="text-lg font-medium mb-2">Personal Information</h3>
               <div className="space-y-2">
                 <p>
-                  <span className="font-medium">Role:</span> {user?.role}
+                  <span className="font-medium">Role:</span> Student
                 </p>
                 <p>
-                  <span className="font-medium">Member Since:</span> January
-                  2025
+                  <span className="font-medium">Member Since:</span>{" "}
+                  {memberSince}
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-lg font-medium mb-2">Account Security</h3>
               <button
-                onClick={handleChangePasswordClick} // Add the onClick handler
+                onClick={handleChangePasswordClick}
                 className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
               >
                 Change Password
