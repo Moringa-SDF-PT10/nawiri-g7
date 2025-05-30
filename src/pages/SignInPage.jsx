@@ -28,42 +28,43 @@ function SignInPage() {
   };
 
   return (
-<div className="bg-blue-400 h-screen w-screen">
-  <div className="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
-    <div
-      className="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0"
-      style={{ height: '500px' }}
-    >
-      <div className="flex flex-col w-full md:w-1/2 p-4">
-        <div className="flex flex-col flex-1 justify-center mb-8">
-          <h1 className="text-4xl text-center font-thin">Welcome Back</h1>
-          <div className="w-full mt-4">
-< SignInForm onSubmit={handleSignIn}/>
-
-                   <div className="text-center mt-4">
-              <a
-                className="no-underline hover:underline text-blue-dark text-xs"
-                href="/reset-password"
-              >
-                Forgot Your Password?
-              </a>
+    <div className="split-container animated-container">
+      {" "}
+      <div className="left-pane fade-in-left p-4">
+        <div className="flex flex-col w-full md:w-1/2 p-4 bg-gray-100 rounded-lg">
+          <div className="flex flex-col flex-1 justify-center mb-8">
+            <h1 className="text-4xl text-center font-thin text-rose-900">
+              Welcome Back
+            </h1>
+            <div className="w-full mt-4 flex flex-col gap-2">
+              <SignInForm onSubmit={handleSignIn} />
+              {error && (
+                <div className="mb-4 p-2 bg-red-100 w-4/5 text-red-700 rounded self-center">
+                  {error}
+                </div>
+              )}
+              <div className="text-center mt-4">
+                <a
+                  className="no-underline hover:underline text-blue-dark text-xs"
+                  href="/reset-password"
+                >
+                  Forgot Your Password?
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        className="hidden md:block md:w-1/2 rounded-r-lg"
+        className="hidden md:block md:w-1/2 rounded-r-lg fade-in-right"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
         }}
       ></div>
     </div>
-  </div>
-</div>
-
-);
+  );
 }
-export default SignInPage
+export default SignInPage;
