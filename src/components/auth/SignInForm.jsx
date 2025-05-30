@@ -42,14 +42,17 @@ function SignInForm({ onSubmit }) {
           Remember Me
         </label>
       </div>
-      <div className="flex flex-col mt-8">
+      <div className="flex flex-col mt-8 transition-all duration-300 ease-in-out">
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded"
         >
           Login
         </button>
+        
       </div>
+      
+      
     </form>
   );
 }

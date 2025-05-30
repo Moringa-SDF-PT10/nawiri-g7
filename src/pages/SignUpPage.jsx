@@ -3,6 +3,7 @@ import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import SignUpForm from "../components/auth/SignUpForm";
 import { Link } from "react-router-dom";
+import Spinner from "../components/common/Spinner";
 
 function SignUpPage() {
   const [error, setError] = useState("");
@@ -48,6 +49,7 @@ function SignUpPage() {
                 </div>
               )}
               <SignUpForm onSubmit={handleSignUp} />
+              <Spinner loading={loading}/>
               <div className="mt-4 text-center">
                 Already have an account?{" "}
                 <Link to="/signin" className="text-blue-600 hover:underline">

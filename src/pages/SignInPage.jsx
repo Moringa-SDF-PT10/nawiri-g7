@@ -3,6 +3,7 @@ import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import SignInForm from "../components/auth/SignInForm";
 import { Link } from "react-router-dom";
+import Spinner from "../components/common/Spinner";
 
 function SignInPage() {
   const [signinError, setSigninError] = useState("");
@@ -37,9 +38,10 @@ function SignInPage() {
               Welcome Back
             </h1>
             <div className="w-full mt-4 flex flex-col gap-2">
-              <SignInForm onSubmit={handleSignIn} />
+              <SignInForm onSubmit={handleSignIn}/>
+              <Spinner loading={loading}/>
               {signinError && (
-                <div className="mb-4 p-2 bg-red-100 w-4/5 text-red-700 rounded self-center">
+                <div className="mb-4 p-2 bg-red-100 w-4/5 text-red-700 rounded self-center transition-all duration-300 ease-in-out">
                   {signinError}
                 </div>
               )}

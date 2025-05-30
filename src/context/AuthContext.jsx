@@ -19,7 +19,7 @@ export const AuthContextProvider = ({ children }) => {
       },
     });
     if (error) {
-      console.error("Error occurred: ", error);
+      
       return { success: false, error };
     }
     return { success: true, data };
@@ -50,21 +50,28 @@ export const AuthContextProvider = ({ children }) => {
         password: password,
       });
       if (error) {
-        console.error("Sign-in Error occurred: ", error);
+        
         return { success: false, error: error.message };
       }
       return { success: true, data };
-    } catch (error) {
-      console.error("Error occurred: ", error);
+    } catch (err) {
+       return { success: false, error: "Unexpected error during sign in." };
     }
   };
 
-  const signOut = () => {
-    const { error } = supabase.auth.signOut();
+const signOut = async () => {
+  try {
+    const { error } = await supabase.auth.signOut();
+
     if (error) {
-      console.error("Error Signing out! Error: ", error);
+      return { success: false, error: error.message };
     }
-  };
+
+    return { success: true };
+  } catch (err) {
+    return { success: false, error: "Unexpected error during sign out." };
+  }
+};
 
   return (
     <AuthContext.Provider

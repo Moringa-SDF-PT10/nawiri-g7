@@ -27,7 +27,7 @@ function ContactPage() {
     setSuccess(true);
     setFormData({ name: "", number: "", message: "" });
 
-    // Hide success message after 3 seconds
+    
     setTimeout(() => setSuccess(false), 3000);
   };
 

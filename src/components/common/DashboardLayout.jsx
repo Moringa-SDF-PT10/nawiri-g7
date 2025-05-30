@@ -8,7 +8,7 @@ const DashboardLayout = () => {
       <DashboardHeader />
       <main className="flex-grow w-full max-w-screen-xl mx-auto p-4">
         <Outlet />{" "}
-        {/* This is where the children (e.g., DashboardHome) will be rendered */}
+        
       </main>
       <DashboardFooter />
     </div>

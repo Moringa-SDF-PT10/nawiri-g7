@@ -20,7 +20,7 @@ import ProfilePage from "./pages/ProfilePage";
 import DashboardLayout from "./components/common/DashboardLayout";
 
 export const router = createBrowserRouter([
-  // { path: "/", element: <App /> },
+  
   {
     element: <Layout />,
     children: [
