@@ -4,7 +4,7 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 export default function Layout() {
   const location = useLocation();
 
-  // Check if current path is part of dashboard (you can adjust as needed)
+  // Check if current path is part of dashboard 
   const isDashboard = location.pathname.startsWith("/dashboard");
 
   return (
