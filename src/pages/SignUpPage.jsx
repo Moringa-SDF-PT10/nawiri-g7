@@ -49,7 +49,7 @@ function SignUpPage() {
                 </div>
               )}
               <SignUpForm onSubmit={handleSignUp} />
-              <Spinner loading={loading}/>
+              <Spinner loading={loading} />
               <div className="mt-4 text-center">
                 Already have an account?{" "}
                 <Link to="/signin" className="text-blue-600 hover:underline">

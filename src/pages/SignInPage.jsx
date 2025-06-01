@@ -38,8 +38,8 @@ function SignInPage() {
               Welcome Back
             </h1>
             <div className="w-full mt-4 flex flex-col gap-2">
-              <SignInForm onSubmit={handleSignIn}/>
-              <Spinner loading={loading}/>
+              <SignInForm onSubmit={handleSignIn} />
+              <Spinner loading={loading} />
               {signinError && (
                 <div className="mb-4 p-2 bg-red-100 w-4/5 text-red-700 rounded self-center transition-all duration-300 ease-in-out">
                   {signinError}

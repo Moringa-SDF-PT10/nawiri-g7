@@ -22,4 +22,4 @@ function Spinner({ loading }) {
   ) : null;
 }
 
-export default Spinner
+export default Spinner;

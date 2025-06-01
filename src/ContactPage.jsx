@@ -27,7 +27,6 @@ function ContactPage() {
     setSuccess(true);
     setFormData({ name: "", number: "", message: "" });
 
-    
     setTimeout(() => setSuccess(false), 3000);
   };
 

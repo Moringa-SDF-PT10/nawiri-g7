@@ -49,10 +49,7 @@ function SignInForm({ onSubmit }) {
         >
           Login
         </button>
-        
       </div>
-      
-      
     </form>
   );
 }

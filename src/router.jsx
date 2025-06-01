@@ -12,7 +12,7 @@ import SplitScreen from "./SplitScreen";
 import ContactPage from "./ContactPage";
 import About from "./About";
 import HomePage from "./pages/DashboardOverview";
-
+import AnnouncementsPage from "./pages/AnnouncementsPage";
 import DashboardHome from "./pages/DashboardHome";
 import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
@@ -20,7 +20,6 @@ import ProfilePage from "./pages/ProfilePage";
 import DashboardLayout from "./components/common/DashboardLayout";
 
 export const router = createBrowserRouter([
-  
   {
     element: <Layout />,
     children: [
@@ -63,7 +62,7 @@ export const router = createBrowserRouter([
                 element: <ProfilePage />,
               },
               {
-                path: "annoucements",
+                path: "announcements",
                 element: <AnnouncementsPage />,
               },
             ],

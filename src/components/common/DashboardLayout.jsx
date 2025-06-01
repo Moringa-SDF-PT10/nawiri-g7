@@ -8,7 +8,6 @@ const DashboardLayout = () => {
       <DashboardHeader />
       <main className="flex-grow w-full max-w-screen-xl mx-auto p-4">
         <Outlet />{" "}
-        
       </main>
       <DashboardFooter />
     </div>

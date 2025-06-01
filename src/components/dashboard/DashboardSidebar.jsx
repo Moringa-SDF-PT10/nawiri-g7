@@ -53,6 +53,14 @@ const DashboardSidebar = () => {
               Profile
             </Link>
           </li>
+                    <li>
+            <Link
+              to="/dashboard/announcements"
+              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/announcements")}`}
+            >
+              Announcements
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
