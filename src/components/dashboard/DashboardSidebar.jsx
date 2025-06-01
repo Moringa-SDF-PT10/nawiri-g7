@@ -56,7 +56,7 @@ const DashboardSidebar = () => {
                     <li>
             <Link
               to="/dashboard/announcements"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/announcements")}`}
+              className={`block px-4 py-2 rounded-md hover:bg-[#f5e5f0] ${isActive("/dashboard/announcements")}`}
             >
               Announcements
             </Link>
