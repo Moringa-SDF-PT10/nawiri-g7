@@ -4,12 +4,10 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 export default function Layout() {
   const location = useLocation();
 
-  // Check if current path is part of dashboard 
   const isDashboard = location.pathname.startsWith("/dashboard");
 
   return (
     <div className="page-wrapper">
-      {/* Only show navbar if NOT on dashboard routes */}
       {!isDashboard && (
         <nav className="navbar">
           <div className="logo">
@@ -25,7 +23,6 @@ export default function Layout() {
 
       <Outlet />
 
-      {/* You can also conditionally hide footer here if you want */}
       {!isDashboard && (
         <footer className="footer">
           <p>© {new Date().getFullYear()} Nawiri. All rights reserved.</p>

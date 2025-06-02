@@ -9,8 +9,7 @@ const LessonList = ({ courseId }) => {
   useEffect(() => {
     const fetchLessons = async () => {
       try {
-        // In a real app, you would fetch lessons for a specific course
-        // This is a mock implementation
+
         const mockLessons = [
           {
             id: 1,
@@ -46,7 +45,6 @@ const LessonList = ({ courseId }) => {
           },
         ];
 
-        // Filter lessons by courseId if provided
         const filtered = courseId
           ? mockLessons.filter((lesson) => lesson.courseId === courseId)
           : mockLessons;
