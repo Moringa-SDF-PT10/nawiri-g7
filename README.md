@@ -45,7 +45,7 @@ src/
 
 
 Need Help?
-📧 support@nawiri.edu | 💬 Live Chat
+📧 support@nawiri.com| 💬 Live Chat
 
 
 
