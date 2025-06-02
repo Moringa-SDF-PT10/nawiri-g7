@@ -14,11 +14,11 @@ export default function SplitScreen() {
           academic and career goals.
         </p>
         <div className="button-group">
-          <button className="primary-button">Student</button>
+          {/* <button className="primary-button">Student</button> */}
           <Link to="/signin" className="primary-button">
-            Student Sign In
+            Get Started
           </Link>
-          <button className="secondary-button">Teacher</button>
+          {/* <button className="secondary-button">Teacher</button> */}
         </div>
         <p>
           Are you a new user? <Link to="/signup">Sign Up</Link> |{" "}

@@ -7,16 +7,16 @@ const DashboardSidebar = () => {
 
   const isActive = (path) => {
     return location.pathname === path
-      ? "bg-blue-100 text-blue-600"
+      ? "bg-[#f5e5f0] text-[#640146]" // active bg + text
       : "text-gray-700";
   };
 
   if (!session) return null;
 
   return (
-    <div className="w-64 bg-white shadow-md h-4/5 fixed">
-      <div className="p-4 border-b">
-        <h2 className="text-xl font-semibold">Dashboard</h2>
+    <div className="w-64 bg-white shadow-md h-full fixed">
+      <div className="p-4 border-b border-[#e4cce0]">
+        <h2 className="text-xl font-semibold text-[#640146]">Dashboard</h2>
         <p className="text-sm text-gray-500">{session.user?.name}</p>
       </div>
       <nav className="p-4">
@@ -24,7 +24,7 @@ const DashboardSidebar = () => {
           <li>
             <Link
               to="/dashboard"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard")}`}
+              className={`block px-4 py-2 rounded-md hover:bg-[#f5e5f0] ${isActive("/dashboard")}`}
             >
               Overview
             </Link>
@@ -32,7 +32,7 @@ const DashboardSidebar = () => {
           <li>
             <Link
               to="/dashboard/courses"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/courses")}`}
+              className={`block px-4 py-2 rounded-md hover:bg-[#f5e5f0] ${isActive("/dashboard/courses")}`}
             >
               Courses
             </Link>
@@ -40,7 +40,7 @@ const DashboardSidebar = () => {
           <li>
             <Link
               to="/dashboard/lessons"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/lessons")}`}
+              className={`block px-4 py-2 rounded-md hover:bg-[#f5e5f0] ${isActive("/dashboard/lessons")}`}
             >
               Lessons
             </Link>
@@ -48,7 +48,7 @@ const DashboardSidebar = () => {
           <li>
             <Link
               to="/dashboard/profile"
-              className={`block px-4 py-2 rounded-md hover:bg-blue-50 ${isActive("/dashboard/profile")}`}
+              className={`block px-4 py-2 rounded-md hover:bg-[#f5e5f0] ${isActive("/dashboard/profile")}`}
             >
               Profile
             </Link>

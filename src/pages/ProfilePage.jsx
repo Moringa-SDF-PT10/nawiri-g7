@@ -31,35 +31,34 @@ const ProfilePage = () => {
     <div className="flex">
       <DashboardSidebar />
       <div className="flex-1 p-6 ml-64">
-        <h1 className="text-2xl font-bold mb-6">Profile</h1>
+        <h1 className="text-2xl font-bold mb-6 text-[#640146]">Profile</h1>
         <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
           <div className="flex items-center mb-6">
-            <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl font-bold mr-4">
+            <div className="h-16 w-16 rounded-full bg-[#f3e0ed] flex items-center justify-center text-[#640146] text-2xl font-bold mr-4">
               {fullName.charAt(0)}
             </div>
             <div>
-              <h2 className="text-xl font-semibold">{fullName}</h2>
+              <h2 className="text-xl font-semibold text-[#640146]">{fullName}</h2>
               <p className="text-gray-600">{user?.email}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-lg font-medium mb-2">Personal Information</h3>
-              <div className="space-y-2">
+              <h3 className="text-lg font-medium mb-2 text-[#640146]">Personal Information</h3>
+              <div className="space-y-2 text-gray-700">
                 <p>
                   <span className="font-medium">Role:</span> Student
                 </p>
                 <p>
-                  <span className="font-medium">Member Since:</span>{" "}
-                  {memberSince}
+                  <span className="font-medium">Member Since:</span> {memberSince}
                 </p>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-medium mb-2">Account Security</h3>
+              <h3 className="text-lg font-medium mb-2 text-[#640146]">Account Security</h3>
               <button
                 onClick={handleChangePasswordClick}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+                className="bg-[#640146] text-white px-4 py-2 rounded-md hover:bg-[#4d0035] transition"
               >
                 Change Password
               </button>

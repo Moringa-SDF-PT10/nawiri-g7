@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
 const DashboardHeader = () => {
@@ -17,7 +16,7 @@ const DashboardHeader = () => {
   };
 
   return (
-    <header className="bg-blue-600 text-white p-4 shadow-md">
+    <header className="bg-[#640146] text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold">
           Nawiri

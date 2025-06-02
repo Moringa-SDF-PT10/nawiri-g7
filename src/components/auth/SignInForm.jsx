@@ -15,7 +15,7 @@ function SignInForm({ onSubmit }) {
         <input
           id="email"
           type="text"
-          className="flex-grow h-8 px-2 border rounded border-grey-400"
+          className="flex-grow h-8 px-2 border rounded border-gray-400 focus:border-[#640146] focus:ring-[#640146] focus:outline-none "
           name="email"
           placeholder="Email"
           value={email}
@@ -23,11 +23,11 @@ function SignInForm({ onSubmit }) {
           required
         />
       </div>
-      <div className="flex flex-col mt-4">
+      <div className="flex flex-col mt-4 ">
         <input
           id="password"
           type="password"
-          className="flex-grow h-8 px-2 rounded border border-grey-400"
+          className="flex-grow h-8 px-2 border rounded border-gray-400 focus:border-[#640146] focus:ring-[#640146] focus:outline-none"
           name="password"
           required
           placeholder="Password"
@@ -37,6 +37,7 @@ function SignInForm({ onSubmit }) {
         />
       </div>
       <div className="flex items-center mt-4">
+        
         <input type="checkbox" name="remember" id="remember" className="mr-2" />
         <label htmlFor="remember" className="text-sm text-grey-dark">
           Remember Me
@@ -45,6 +46,7 @@ function SignInForm({ onSubmit }) {
       <div className="flex flex-col mt-8 transition-all duration-300 ease-in-out">
         <button
           type="submit"
+          style={{ backgroundColor: "#640146" }}
           className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded"
         >
           Login
