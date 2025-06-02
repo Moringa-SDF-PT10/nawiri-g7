@@ -24,7 +24,7 @@ Build	Vite
 
 💻 Local Development
 # Clone repository
-git clone https://github.com/your-org/nawiri.git
+git clone https://https://github.com/Moringa-SDF-PT10/nawiri-g7
 
 # Install dependencies
 npm install
@@ -45,7 +45,7 @@ src/
 
 
 Need Help?
-📧 support@nawiri.com| 💬 Live Chat
+📧 http://nawiri-g7.netlify.app/| 💬 Live Chat
 
 
 
