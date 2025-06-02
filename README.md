@@ -2,7 +2,7 @@
 
 A modern, responsive student portal built with **React**, designed to give students access to their academic resources in a seamless, single-page experience. The portal features authentication, protected routes, dynamic dashboards, and course content — all styled with Tailwind CSS.
 
-> 🌐 Live Site: [https://teal-zuccutto-98bdf2.netlify.app/](https://teal-zuccutto-98bdf2.netlify.app/)
+> 🌐 Live Site: [https://nawiri-g7.netlify.app/](https://nawiri-g7.netlify.app/)
 
 ---
 
