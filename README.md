@@ -8,7 +8,7 @@
 - `/profile` - Personal account management
 - `/announcements` - Institutional communications
 - `/courses` - Learning materials & progress
-- `/sign-in` - Secure authentication portal
+- `/lessons` - Secure authentication portal
 
 ## 🛠️ Tech Stack
 ```diff
