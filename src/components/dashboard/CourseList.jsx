@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCourses } from "../../api/mockCoursesApi";
+import { getCourses } from "../../api/courses";
 
 const CourseList = () => {
   const [courses, setCourses] = useState([]);

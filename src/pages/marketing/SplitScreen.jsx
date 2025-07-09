@@ -1,5 +1,5 @@
-import "./App.css";
-import nariri_school from "./assets/nariri_school.jpg";
+import "./../../css/App.css";
+import nariri_school from "./../../assets/images/nariri_school.jpg";
 import { Link } from "react-router-dom";
 
 export default function SplitScreen() {
@@ -16,7 +16,7 @@ export default function SplitScreen() {
         <div className="button-group">
           {/* <button className="primary-button">Student</button> */}
           <Link to="/signin" className="primary-button">
-            Get Started
+            Sign In
           </Link>
           {/* <button className="secondary-button">Teacher</button> */}
         </div>

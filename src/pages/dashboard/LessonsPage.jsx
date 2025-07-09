@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DashboardSidebar from "../components/dashboard/DashboardSidebar";
+import DashboardSidebar from "../../components/dashboard/DashboardSidebar";
 
 const lessons = [
   {

@@ -33,7 +33,7 @@ function SignInForm({ onSubmit }) {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
+          
         />
       </div>
       <div className="flex items-center mt-4">

@@ -1,24 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
-import SignUpPage from "./pages/SignUpPage";
-import SignInPage from "./pages/SignInPage";
-import App from "./App";
-import ResetPassword from "./pages/ResetPassword";
-import PrivateRoute from "./PrivateRoute";
-import Layout from "./Layout";
-import SplitScreen from "./SplitScreen";
-import ContactPage from "./ContactPage";
-import About from "./About";
-import HomePage from "./pages/DashboardOverview";
-import AnnouncementsPage from "./pages/AnnouncementsPage";
-import DashboardHome from "./pages/DashboardHome";
-import CoursesPage from "./pages/CoursesPage";
-import LessonsPage from "./pages/LessonsPage";
-import ProfilePage from "./pages/ProfilePage";
-import DashboardLayout from "./components/common/DashboardLayout";
+import SignUpPage from "../pages/auth/SignUpPage";
+import SignInPage from "../pages/auth/SignInPage";
+import App from "../App";
+import ResetPassword from "../pages/auth/ResetPassword";
+import PrivateRoute from "../layouts/PrivateRoute";
+import MainLayout from "../layouts/MainLayout";
+import SplitScreen from "../pages/marketing/SplitScreen";
+import ContactPage from "../pages/marketing/ContactPage";
+import About from "../pages/marketing/About";
+import HomePage from "../pages/dashboard/DashboardOverview";
+import AnnouncementsPage from "../pages/dashboard/AnnouncementsPage";
+import DashboardHome from "../pages/dashboard/DashboardHome";
+import CoursesPage from "../pages/dashboard/CoursesPage";
+import LessonsPage from "../pages/dashboard/LessonsPage";
+import ProfilePage from "../pages/dashboard/ProfilePage";
+import DashboardLayout from "../components/dashboard/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: <MainLayout />,
     children: [
       {
         path: "/",

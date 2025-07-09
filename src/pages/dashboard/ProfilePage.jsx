@@ -1,5 +1,5 @@
-import { UserAuth } from "../context/AuthContext";
-import DashboardSidebar from "../components/dashboard/DashboardSidebar";
+import { UserAuth } from "../../context/AuthContext";
+import DashboardSidebar from "../../components/dashboard/DashboardSidebar";
 import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {

@@ -1,5 +1,5 @@
-import AnnouncementsList from "../components/dashboard/AnnouncementsList";
-import DashboardSidebar from "../components/dashboard/DashboardSidebar";
+import AnnouncementsList from "../../components/dashboard/AnnouncementsList";
+import DashboardSidebar from "../../components/dashboard/DashboardSidebar";
 
 const AnnouncementsPage = () => {
   return (

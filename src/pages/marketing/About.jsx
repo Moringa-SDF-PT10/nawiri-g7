@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import nawiri_about from "./assets/nawiri_about.jpg";
-import "./App.css";
+import nawiri_about from "./../../assets/images/nawiri_about.jpg";
+import "./../../css/App.css";
 
 function About() {
   return (

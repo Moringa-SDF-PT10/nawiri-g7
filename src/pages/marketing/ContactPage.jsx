@@ -1,6 +1,6 @@
-import nawiri_contact from "./assets/nawiri_contact.jpg";
+import nawiri_contact from "./../../assets/images/nawiri_contact.jpg";
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./../../css/App.css";
 
 function ContactPage() {
   const [formData, setFormData] = useState({

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { UserAuth } from "../context/AuthContext";
+import { UserAuth } from "../../context/AuthContext";
 
 const DashboardOverview = () => {
   const { session } = UserAuth();

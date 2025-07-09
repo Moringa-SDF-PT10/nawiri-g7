@@ -1,5 +1,5 @@
-import CourseList from "../components/dashboard/CourseList";
-import DashboardSidebar from "../components/dashboard/DashboardSidebar";
+import CourseList from "../../components/dashboard/CourseList";
+import DashboardSidebar from "../../components/dashboard/DashboardSidebar";
 
 const CoursesPage = () => {
   return (

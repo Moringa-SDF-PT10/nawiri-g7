@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAnnouncements } from "../../api/announcementsApi";
+import { getAnnouncements } from "../../api/announcements";
 import Announcement from "./Announcement";
 
 const AnnouncementsList = () => {
@@ -11,7 +11,7 @@ const AnnouncementsList = () => {
       try {
         const announcementsData = await getAnnouncements();
         setAnnouncements(announcementsData);
-        console.log(announcementsData)
+        
       } catch (error) {
         console.error("Error fetching announcements:", error);
       } finally {

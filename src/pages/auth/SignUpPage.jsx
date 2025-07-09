@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { UserAuth } from "../context/AuthContext";
+import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import SignUpForm from "../components/auth/SignUpForm";
+import SignUpForm from "../../components/auth/SignUpForm";
 import { Link } from "react-router-dom";
-import Spinner from "../components/common/Spinner";
+import Spinner from "../../components/common/Spinner";
 
 function SignUpPage() {
   const [error, setError] = useState("");

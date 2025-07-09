@@ -1,5 +1,5 @@
-import DashboardSidebar from "../components/dashboard/DashboardSidebar";
-import { UserAuth } from "../context/AuthContext";
+import DashboardSidebar from "../../components/dashboard/DashboardSidebar";
+import { UserAuth } from "../../context/AuthContext";
 import DashboardOverview from "./DashboardOverview";
 
 const DashboardHome = () => {

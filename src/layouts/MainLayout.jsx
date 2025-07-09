@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
-export default function Layout() {
+export default function MainLayout() {
   const location = useLocation();
 
   const isDashboard = location.pathname.startsWith("/dashboard");
