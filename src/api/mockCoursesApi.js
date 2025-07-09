@@ -1,4 +1,4 @@
-// Mock database
+// Mock Courses
 const courses = [
   {
     id: 1,

@@ -1,11 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
-import PlaceholderStudentDashboard from "./PlaceholderStudentDashboard";
-import PlaceholderTeacherDashboard from "./PlaceholderTeacherDashboard";
 import App from "./App";
-import ResetPassword from "./auth/ResetPassword";
-import PlaceholderProfile from "./PlaceholderProfile";
+import ResetPassword from "./pages/ResetPassword";
 import PrivateRoute from "./PrivateRoute";
 import Layout from "./Layout";
 import SplitScreen from "./SplitScreen";
@@ -72,14 +69,5 @@ export const router = createBrowserRouter([
     ],
   },
 
-  {
-    path: "/dashboard-placeholder",
-    element: <PrivateRoute />,
-    children: [
-      {
-        index: true,
-        element: <PlaceholderStudentDashboard />,
-      },
-    ],
-  },
+
 ]);
