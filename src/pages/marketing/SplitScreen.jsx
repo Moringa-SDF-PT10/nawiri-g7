@@ -7,12 +7,10 @@ export default function SplitScreen() {
     <div className="split-container animated-container">
       <div className="left-pane fade-in-left">
         <h1>
-          Welcome To <span className="brand-name">Nawiri</span>
+          Welcome To <span className="brand-name">Nawiri Students Portal</span>
         </h1>
         <p>
-          Nawiri connects students with mentors to help them achieve their
-          academic and career goals.
-        </p>
+          Nawiri avails necessary academic and career information in realtime to increase productivity. </p>
         <div className="button-group">
           {/* <button className="primary-button">Student</button> */}
           <Link to="/signin" className="primary-button">

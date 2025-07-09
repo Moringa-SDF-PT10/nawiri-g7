@@ -11,7 +11,7 @@ export default function MainLayout() {
       {!isDashboard && (
         <nav className="navbar">
           <div className="logo">
-            <Link to="/">Nawiri</Link>
+            <Link to="/">Nawiri Students Portal</Link>
           </div>
           <div className="nav-links">
             <Link to="/">Home</Link>
